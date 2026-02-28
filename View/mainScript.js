@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', ()=>{ //Esperar a que todo el HTML
 
             //Actualizar contenido del dropdown con nombre de usuario, rol (si es admin) y botón de cerrar sesión
             userContent.innerHTML = `
-                <p>Hola, <strong>${payload.username}</strong></p>
+                <p>Hola, <strong>${payload.nombre}</strong></p>
                 ${adminBadge}
                 <button onclick="cerrarSesion()" class="btnDropdown btnLogout">Cerrar Sesión</button>
             `;
