@@ -27,6 +27,27 @@ document.addEventListener('DOMContentLoaded', ()=>{ //Esperar a que todo el HTML
     actualizarVista(); //Actualizar vista del carrito al cargar la página
 });
 
+//Función para que al dar click mantener el hover abierto del carrito o usuario y cerrarlo al hacer click fuera
+document.addEventListener('click', (e) =>{
+    const userContainer = document.querySelector('.userContainer');
+    const cartContainer = document.querySelector('.cartContainer');
+
+    if(userContainer.contains(e.target)){ //Usuario
+        userContainer.classList.toggle('active');
+        cartContainer.classList.remove('active');
+    } 
+    
+    else if(cartContainer.contains(e.target)){ //Carrito
+        cartContainer.classList.toggle('active');
+        userContainer.classList.remove('active');
+    } 
+    
+    else{
+        userContainer.classList.remove('active');
+        cartContainer.classList.remove('active');
+    }
+});
+
 //---FUNCIONES DEL CARRITO---
 //Agregar al Carrito
 function agregarCarrito(nombre, precio, imagen){ 
@@ -133,3 +154,4 @@ function cerrarSesion() {
     localStorage.removeItem('token'); //Elimina el token de acceso
     window.location.reload(); //Refresca la página para volver a estado de invitado
 }
+
