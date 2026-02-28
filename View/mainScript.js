@@ -57,14 +57,20 @@ function actualizarVista(){
     itemsContainer.innerHTML = ""; //Limpiar mensaje de Carrito Vacío
     let total = 0;
 
-    carrito.forEach((item)=>{ //Dibuja cada producto en el carrito
+    carrito.forEach((item, index)=>{ //Dibuja cada producto en el carrito
         total += item.precio * item.cantidad;
         itemsContainer.innerHTML += `
             <div class="cartItem">
                 <img src="${item.imagen}" alt="${item.nombre}">
                 <div class="itemInfo">
                     <p class="itemName">${item.nombre}</p>
-                    <p>${item.cantidad} x $${item.precio.toFixed(2)}</p>
+                    <p>$${item.precio.toFixed(2)}</p>
+                    <div class="cartControls">
+                        <button onclick="cambiarCantidad(${index}, -1)">-</button>
+                        <span>${item.cantidad}</span>
+                        <button onclick="cambiarCantidad(${index}, 1)">+</button>
+                        <button class="btnEliminar" onclick="eliminarDelCarrito(${index})"><img src="../Source/icons/trash.png" alt="Eliminar" class="iconBasura"></button>
+                    </div>
                 </div>
             </div>
         `;
@@ -72,6 +78,26 @@ function actualizarVista(){
     //Actualizar numero de la burbuja roja del carrito y monto total
     cartCount.innerText = carrito.reduce((acc, item) => acc + item.cantidad, 0);
     totalAmount.innerText = `$${total.toFixed(2)}`;
+}
+
+//Sumar o restar cantidad de item
+function cambiarCantidad(index, cambio){
+    carrito[index].cantidad += cambio;
+
+    //Si la cantidad llega a 0 se elimina
+    if (carrito[index].cantidad <= 0) {
+        eliminarDelCarrito(index);
+    }else{
+        guardarCarrito();
+        actualizarVista();
+    }
+}
+
+//Eliminar item del carrito
+function eliminarDelCarrito(index) {
+    carrito.splice(index, 1); 
+    guardarCarrito();
+    actualizarVista();
 }
 
 //Guardar carrito en LocalStorage si no tiene cuenta, pero si hay sesión envíar al Backend

@@ -362,6 +362,60 @@ body{
     background: #444;
 }
 
+/*Cantidad y eliminar del carrito*/
+.cartControls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.cartControls button {
+    background: #eee;
+    border: 1px solid #ccc;
+    padding: 2px 8px;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.cartControls button:hover {
+    background: #ddd;
+}
+
+.cartControls span {
+    font-size: 13px;
+    font-weight: bold;
+    min-width: 15px;
+    text-align: center;
+}
+
+.btnEliminar {
+    background: none !important;
+    border: none !important;
+    cursor: pointer;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.btnEliminar:hover {
+    transform: scale(1.2);
+}
+
+.iconBasura {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.2s;
+}
+
+.iconBasura:hover {
+    transform: scale(1.2); /*Agrandado al pasar el mouse*/
+    filter: invert(20%);   /*Oscurecer imagen*/
+}
+
 /*--- PIE DE PÁGINA (FOOTER) ---*/
 .Pie {
     background: #fff;
