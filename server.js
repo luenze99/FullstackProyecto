@@ -7,6 +7,7 @@ const path = require('path');
 const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'View')));
+app.use('/Source', express.static(path.join(__dirname, 'Source')));
 
 //Pagina que se muestra al entrar a la raiz del servidor (Login) -------------------------------->
 app.get('/', (req, res) => {
