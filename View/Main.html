@@ -20,9 +20,16 @@
                 </ul>
             </nav>
             <div class="iconos">
-                <a href="../views/shopping_cart_view.html"><img src="../Source/icons/Carrito_de_compras.png" class="Carrito" alt="Carrito de compras"></a>
-                <a href=""><img src="../Source/icons/Icono_Usuario.png" class="Usuario" alt="Usuario"></a>
-                <a href=""><img src="../Source/icons/Favoritos.png" class="MeGusta" alt="MeGusta"></a>
+                <a href="#"><img src="../Source/icons/Favoritos.png" class="iconNav" alt="MeGusta"></a>
+                <a href="../views/shopping_cart_view.html"><img src="../Source/icons/Carrito_de_compras.png" class="iconNav" alt="Carrito"></a>
+                <div class="userContainer">
+                    <img src="../Source/icons/Icono_Usuario.png" class="iconNav" alt="Usuario">
+                    <div class="userDrop" id="userDropdown">
+                        <div id="userContent">
+                            <button onclick="window.location.href='login.html'" class="btnDropdown">Iniciar Sesión</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header> 
         <main>
@@ -131,4 +138,6 @@
             </div>
 
         </footer>
+        <script src="mainScript.js"></script>
     </body>
+</html>
