@@ -406,8 +406,8 @@ body{
 }
 
 .iconBasura {
-    width: 10px;
-    height: 10px;
+    width: 14px;
+    height: 14px;
     display: block;
     transition: transform 0.2s ease;
     cursor: pointer;
