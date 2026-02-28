@@ -408,7 +408,9 @@ body{
 .iconBasura {
     width: 10px;
     height: 10px;
-    transition: transform 0.2s;
+    display: block;
+    transition: transform 0.2s ease;
+    cursor: pointer;
 }
 
 .iconBasura:hover {
