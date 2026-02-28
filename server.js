@@ -11,7 +11,7 @@ app.use('/Source', express.static(path.join(__dirname, 'Source')));
 
 //Pagina que se muestra al entrar a la raiz del servidor (Login) -------------------------------->
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'View', 'login.html')); //Modificar despues a Main.html o lo que sea la pagina principal
+    res.sendFile(path.join(__dirname, 'View', 'Main.html')); //Modificar despues a Main.html o lo que sea la pagina principal
 });
 
 //CONFIGURACIÓN PARA RENDER
