@@ -38,11 +38,9 @@ async function enviar(tipo){
                 msg.innerText = "¡Registro completado! Ya puedes iniciar sesión";
                 setTimeout(switchLogin, 2000);
             }else{ //Login exitoso, guardar token y redirigir a pagina principal
-                localStorage.setItem('userToken', data.token);
-                localStorage.setItem('userRol', data.rol);
-                localStorage.setItem('userName', data.nombre);
+                localStorage.setItem('token', data.token); //Guardamos como 'token' para que el Main lo reconozca
                 //------------------
-                window.location.href = "Main.html"; //CAMBIAR A NOMBRE DE LA PAGINA PRINCIPAL --------
+                window.location.href = "Main.html"; //LINK PARA PAGINA PRINCIPAL --------
                 //------------------
             }
         }else{
