@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe&Co | Finalizar Pago</title>
+    <link rel="stylesheet" href="pagoStyle.css">
+</head>
+<body>
+    <div class="pagoContainer">
+        <h2>FINALIZAR COMPRA</h2>
+        <div id="resumenPago">
+            <p>Total a pagar: <span id="montoTotal">$00.00</span></p>
+        </div>
+        <form id="formPago">
+            <input type="text" id="nomTitular" placeholder="Nombre en la tarjeta" title="Nombre Titular" required>
+            <input type="tel" id="numTarjeta" placeholder="Número de tarjeta (16 dígitos)" maxlength="16" pattern="\d{16}" title="Número de tarjeta" required>
+            <div class="row">
+                <input type="tel" id="expiracion" placeholder="MM/AA" maxlength="5" pattern="\d{2}/\d{2}" title="Formato MM/AA" required>
+                <input type="tel" id="cvv" placeholder="CVV" maxlength="3" pattern="\d{3}" title="CVV" required>
+            </div>
+            <button type="submit" id="btnConfirmar">CONFIRMAR PAGO</button>
+        </form>
+        <button onclick="history.back()" class="btnVolver">Cancelar y volver</button>
+    </div>
+    <script src="pagoScript.js"></script>
+</body>
+</html>
