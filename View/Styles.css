@@ -226,6 +226,17 @@ body{
     display: block;
 }
 
+.rolAdmin {
+    display: inline-block;
+    background-color: #000; 
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
 .btnDropdown {
     width: 100%;
     padding: 8px;
