@@ -39,6 +39,9 @@ async function enviar(tipo){
                 setTimeout(switchLogin, 2000);
             }else{ //Login exitoso, guardar token y redirigir a pagina principal
                 localStorage.setItem('token', data.token); //Guardamos como 'token' para que el Main lo reconozca
+                if (data.carrito && data.carrito.length > 0){ //Si el usuario tiene carrito guardado, lo sincronizamos con LocalStorage
+                    localStorage.setItem('vibeCart', JSON.stringify(data.carrito));
+                }
                 //------------------
                 window.location.href = "Main.html"; //LINK PARA PAGINA PRINCIPAL --------
                 //------------------

@@ -267,6 +267,101 @@ body{
     background-color: #a00000;
 }
 
+/*--- DROPDOWN DEL CARRITO ---*/
+.cartContainer { 
+  position: relative; 
+  display: flex; 
+  align-items: center; 
+}
+
+#cartCount{ /*Contador de items en el carrito*/
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: #ff0000;
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 40%;
+}
+
+.cartDropdown {
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background: white;
+    width: 280px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.5);
+    border-radius: 8px;
+    padding: 15px;
+    z-index: 1000;
+}
+
+.cartDropdown::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 100%;
+    height: 15px;
+}
+
+.cartContainer:hover .cartDropdown{ 
+  display: block; 
+}
+
+/*Estilo de cada item en el carrito*/
+.cartItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.cartItem img{ 
+  width: 50px; 
+  height: 50px; 
+  object-fit: cover; 
+  border-radius: 4px; 
+}
+
+.itemInfo p { 
+  margin: 0; 
+  font-size: 12px; 
+}
+
+.itemInfo .itemName { 
+  font-weight: bold; 
+}
+
+.cartFooter { 
+  margin-top: 10px; 
+  text-align: center; 
+}
+
+.cartTotal { 
+  font-weight: bold; 
+  margin-bottom: 10px; 
+  font-size: 16px; 
+}
+
+.btnPagar{
+    width: 100%;
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btnPagar:hover {
+    background: #444;
+}
+
 /*--- PIE DE PÁGINA (FOOTER) ---*/
 .Pie {
     background: #fff;

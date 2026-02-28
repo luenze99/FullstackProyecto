@@ -21,7 +21,18 @@
             </nav>
             <div class="iconos">
                 <a href="#"><img src="../Source/icons/Favoritos.png" class="iconNav" alt="MeGusta"></a>
-                <a href="../views/shopping_cart_view.html"><img src="../Source/icons/Carrito_de_compras.png" class="iconNav" alt="Carrito"></a>
+                <div class="cartContainer">
+                    <a href="../views/shopping_cart_view.html"><img src="../Source/icons/Carrito_de_compras.png" class="iconNav" alt="Carrito"><span id="cartCount">0</span></a>
+                    <div class="cartDropdown">
+                        <div id="cartItemsContainer">
+                            <p class="emptyMsg">Carrito vacío</p>
+                        </div>
+                        <div class="cartFooter">
+                            <div class="cartTotal">Total: <span id="cartTotalAmount">$0.00</span></div>
+                            <button onclick="Pagar()" class="btnPagar">FINALIZAR COMPRA</button>
+                        </div>
+                    </div>
+                </div>
                 <div class="userContainer">
                     <img src="../Source/icons/Icono_Usuario.png" class="iconNav" alt="Usuario">
                     <div class="userDrop" id="userDropdown">

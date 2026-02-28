@@ -29,7 +29,8 @@ const Usuario = mongoose.model('Usuario', new mongoose.Schema({
     nombre: {type: String, required: true},
     correo: {type: String, unique: true, required: true},
     pass: {type: String, required: true},
-    rol: {type: String, default:'cliente'}
+    rol: {type: String, default:'cliente'},
+    carrito: {type: Array, default: []} //Guardado del carrito
 }));
 
 //--- RUTAS ---
@@ -59,7 +60,7 @@ app.post('/login', async (req, res)=>{
                 SECRET_KEY, 
                 {expiresIn: '1h'}
             );
-            res.json({success: true, token, rol: user.rol, nombre: user.nombre});
+            res.json({success: true, token, rol: user.rol, nombre: user.nombre, carrito: user.carrito});
         }else{
             res.json({success: false, error:"Correo o contraseña incorrectos"});
         }
@@ -78,6 +79,18 @@ app.post('/api/setup-vibe-admin', async (req, res)=>{
         res.json({success: true, mensaje: "Cuenta admin creada correctamente"});
     }catch (e){
         res.status(400).json({error:"Error al crear cuenta admin"});
+    }
+});
+
+//Guardar carrito en BD
+app.post('/api/carrito/sincronizar', async (req, res)=>{
+    const {token, carrito} = req.body;
+    try{
+        const decoded = jwt.verify(token, SECRET_KEY);
+        await Usuario.findByIdAndUpdate(decoded.id, {carrito: carrito});
+        res.json({ success: true });
+    } catch (e) {
+        res.status(401).json({success: false, error: "Token inválido"});
     }
 });
 
