@@ -1,297 +1,290 @@
 body {
-    background-color: #EDE8D0;
+    background-color: #f8f5e6;
     margin: 0;
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
+    color: #333;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px;
+    padding: 0 60px;
     background: #1F2A44;
-    height: 100px;
+    height: 90px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.logo {
-    flex: 1;
-    display: flex;
-    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .logo img {
-    height: 80px;
-    width: auto;
-    object-fit: contain;
+    height: 70px;
+    transition: transform 0.3s ease;
 }
 
-nav {
-    flex: 2;
-    display: flex;
-    justify-content: center;
+.logo img:hover {
+    transform: scale(1.05);
 }
 
 .menu {
     display: flex;
     list-style: none;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
+    gap: 40px;
 }
 
 .menu li a {
-    font-size: 0.85rem;
-    letter-spacing: 2px;
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
     text-decoration: none;
     color: #ffffff;
-    font-weight: 600;
-    text-transform: uppercase;
+    font-weight: 400;
+    transition: 0.3s;
+    position: relative;
+}
+
+.menu li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #fff;
     transition: 0.3s;
 }
 
-.menu li a:hover {
-    color: #888;
+.menu li a:hover::after {
+    width: 100%;
 }
 
 .iconos {
-    flex: 1;
     display: flex;
-    justify-content: flex-end;
+    gap: 25px;
     align-items: center;
-    gap: 20px;
 }
 
-.iconNav, .iconos img {
-    width: 22px;
-    height: 22px;
+.iconNav {
+    width: 24px;
     filter: invert(1);
-    cursor: pointer;
     transition: 0.3s;
 }
 
 .iconNav:hover {
-    transform: scale(1.15);
-    opacity: 0.7;
-}
-
-.userContainer, .cartContainer {
-    position: relative;
-    display: flex;
-    align-items: center;
+    transform: translateY(-3px);
+    filter: invert(0.8);
 }
 
 #cartCount {
-    background: #ff3f6c;
+    background: #e74c3c;
     color: white;
-    font-size: 10px;
-    padding: 2px 6px;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 7px;
     border-radius: 50%;
     position: absolute;
-    top: -8px;
-    right: -10px;
+    top: -10px;
+    right: -12px;
+    border: 2px solid #1F2A44;
 }
 
 .userDrop, .cartDropdown {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 50px;
     right: 0;
-    background: white;
-    padding: 20px;
-    width: 280px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    color: black;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .userContainer:hover .userDrop,
 .cartContainer:hover .cartDropdown {
     display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .women-hero {
     position: relative;
-    width: 100%;
-    height: 70vh;
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
 }
 
-.MenWalking, .marmol {
+.marmol {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.7);
+    filter: brightness(0.6);
 }
 
 .hero-text {
     position: absolute;
     text-align: center;
-    color: white;
 }
 
 .hero-text h1 {
-    font-size: 4rem;
-    letter-spacing: 8px;
+    font-size: 5rem;
+    font-weight: 600;
+    letter-spacing: 12px;
+    color: white;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
     margin: 0;
-    text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
 }
 
 .categorias-women {
+    padding: 80px 20px 40px;
     text-align: center;
-    padding: 60px 20px 20px;
 }
 
 .categorias-women h2 {
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.filtros {
-    margin-top: 25px;
+    font-size: 2.2rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
 }
 
 .filtros button {
-    padding: 10px 25px;
-    margin: 5px;
-    border: 1px solid black;
+    padding: 12px 30px;
+    margin: 8px;
+    border: 1px solid #333;
     background: transparent;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.4s;
+    border-radius: 50px;
 }
 
 .filtros button:hover {
-    background: black;
-    color: white;
+    background: #333;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.productos-men, .productos {
+.productos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    padding: 40px 80px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px;
+    padding: 20px 10%;
+    margin-bottom: 80px;
 }
 
 .producto {
-    text-align: center;
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    transition: 0.4s;
+    border: 1px solid transparent;
+}
+
+.producto:hover {
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    transform: translateY(-5px);
 }
 
 .producto img {
     width: 100%;
-    border-radius: 4px;
-    transition: 0.4s;
-}
-
-.producto:hover img {
-    transform: translateY(-10px);
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .producto h4 {
-    margin: 15px 0 5px;
     font-size: 1.1rem;
+    margin: 20px 0 5px;
+    font-weight: 500;
 }
 
 .producto p {
-    font-weight: 600;
-    color: #333;
+    color: #777;
+    font-size: 1rem;
+    margin-bottom: 20px;
 }
 
 .producto button {
-    margin-top: 15px;
-    padding: 12px 20px;
-    background: black;
+    padding: 15px;
+    background: #1F2A44;
     color: white;
     border: none;
     width: 100%;
+    border-radius: 8px;
+    font-weight: 600;
     cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 1px;
     transition: 0.3s;
 }
 
 .producto button:hover {
-    background: #333;
+    background: #34495e;
+    letter-spacing: 1px;
 }
 
 .Pie {
     background: #1F2A44;
-    padding: 60px 80px 30px;
+    padding: 80px 10% 40px;
     color: white;
-    margin-top: 50px;
 }
 
 .info {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 50px;
 }
 
 .columnas h3 {
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
     color: #fff;
 }
 
 .columnas a {
-    display: block;
+    color: #bbb;
     text-decoration: none;
-    color: rgba(255,255,255,0.7);
-    font-size: 0.85rem;
-    margin-bottom: 10px;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 12px;
     transition: 0.3s;
 }
 
 .columnas a:hover {
     color: white;
-    text-decoration: underline;
+    padding-left: 5px;
 }
 
 .piedepagina {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 60px;
     padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
 }
 
 .piedepagina img {
-    height: 40px;
+    height: 50px;
     filter: brightness(0) invert(1);
+    margin-bottom: 15px;
 }
 
 .piedepagina p {
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.5);
+    font-size: 0.8rem;
+    color: #888;
 }
 
 @media (max-width: 768px) {
-    .navbar {
-        height: auto;
-        flex-direction: column;
-        padding: 20px;
-    }
-    .menu {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-        margin: 20px 0;
-    }
-    .hero-text h1 {
-        font-size: 2.5rem;
-    }
-    .productos {
-        padding: 20px;
-    }
+    .navbar { padding: 0 20px; height: auto; flex-direction: column; }
+    .hero-text h1 { font-size: 2.5rem; }
+    .productos { padding: 20px 5%; }
 }
