@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe&Co | Login</title>
+    <link rel="stylesheet" href="logStyle.css">
+</head>
+<body class="bodyLogin">
+    <div class="containerLogin">
+        <div id="seccionLogin">
+            <h2 class="h2Login">INICIAR SESIÓN</h2>
+            <input type="email" class="inputLogin" id="logCorreo" placeholder="Correo">
+            <input type="password" class="inputLogin" id="logPass" placeholder="Contraseña">
+            <button class="botonLogin" onclick="enviar('login')">ENTRAR</button>
+            <p>¿No tienes cuenta? <span class="toggleLogin" onclick="switchLogin()">Regístrate</span></p>
+        </div>
+
+        <div id="seccionRegistro" class="hidden">
+            <h2 class="h2Login">NUEVA CUENTA</h2>
+            <input type="text" class="inputLogin" id="regNombre" placeholder="Nombre">
+            <input type="email" class="inputLogin" id="regCorreo" placeholder="Correo">
+            <input type="password" class="inputLogin" id="regPass" placeholder="Contraseña">
+            <button class="botonLogin" onclick="enviar('register')">REGISTRAR</button>
+            <p>¿Ya tienes cuenta? <span class="toggleLogin" onclick="switchLogin()">Inicia sesión</span></p>
+        </div>
+        <p id="msg"></p>
+    </div>
+    <script src="logScript.js"></script>
+</body>
+</html>

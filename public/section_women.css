@@ -1,0 +1,234 @@
+body{
+    background-color: #EDE8D0;
+    margin:0;
+    font-family: 'Poppins', 'sans-serif';
+}
+
+header{
+    display:flex;
+    justify-content: left;
+    align-items: center;
+    gap: 30px; 
+    padding: 15px 40px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    color: #fff;
+}
+.navbar{
+  display: flex;
+  align-items: left;
+  padding: 20px 60px;
+  background: #1F2A44;
+  border-bottom: 1px solid #eee;
+}
+.menu{
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+
+}
+.menu li{
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.3s;
+  color:#fff;
+}
+.menu li:hover {
+  color: #888;
+}
+.LoNuevo{
+    color:#fff;
+}
+.Hombres{
+    color:#fff;
+}
+.Mujeres{
+    color:#fff;
+}
+.NiñosyNiñas{
+    color:#fff;
+}
+.Ofertas{
+    color:#fff;
+}
+.iconos {
+    display: flex;
+    align-items: center;
+    gap: 25px; 
+}
+
+.iconos a {
+    display: flex;
+    align-items: center;
+}
+
+.iconos img {
+    width: 22px;  
+    height: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color:#fff;
+}
+.iconos img:hover {
+    transform: scale(1.15);
+    opacity: 0.7;
+}
+.Carrito{
+    position: absolute;
+    right: 55px;
+    width: 20px;
+    height: auto;
+}
+.Usuario{
+    position: absolute;
+    right: 20px;
+    width: 21px;
+    height:auto;
+    align-items: center;
+}
+.MeGusta{
+    position: absolute;
+    right: 90px;
+    width: 20px;
+    height:auto;
+    align-items: center;
+}
+header a{
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+.logo img {
+  height: 80px;
+}
+.Carrito{
+    width: 20px;
+    height: 20px;
+}
+.marmol{
+    width: 1525px;
+    height: 600px;
+    object-fit: cover; 
+}
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    color: white;
+}
+.hero-text h1 {
+    font-size: 4rem;
+    margin: 0;
+    margin: 0;
+    letter-spacing: 5px;
+}
+
+.categorias-women{
+    text-align: center;
+    padding: 50px 20px 20px;
+}
+.filtros{
+    margin-top: 20px;
+}
+
+.filtros button{
+    padding: 8px 20px;
+    margin: 5px;
+    border: 1px solid black;
+    background: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filtros button:hover{
+    background: black;
+    color: white;
+}
+
+.productos{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    padding: 60px;
+}
+
+.producto img {
+    width: 100%;
+    transition: 0.3s;
+}
+.producto:hover img{
+    transform: scale(1.05);
+}
+.producto button{
+    margin-top: 10px;
+    padding: 8px 20px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.Pie{
+  background: #1F2A44;
+  padding: 60px 80px 30px;
+  border-top: 1px solid #eee;
+  font-family: 'Poppins', sans-serif;
+}
+.info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+/* Columnas */
+.columnas h3 {
+  font-size: 15px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.columnas a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.columnas a:hover {
+  text-decoration: underline;
+}
+
+/* Texto */
+.columnas p {
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+
+/* Parte inferior */
+.piedepagina {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-top: 1px solid #1F2A44;
+  padding-top: 20px;
+}
+
+.piedepagina img {
+  height: 35px;
+}
+
+.piedepagina p {
+  font-size: 12px;
+  color: #fff;
+}
