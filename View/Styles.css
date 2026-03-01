@@ -499,46 +499,35 @@ nav {
 /*---RESPONSIVIDAD TELEFONOS---*/
 @media (max-width: 768px){
     .navbar {
-        display: block !important;
-        height: auto !important;
-        padding: 20px 10px !important;
-        text-align: center;
-    }
-    .logo {
-        display: block !important;
-        width: 100% !important;
-        margin-bottom: 20px !important; 
-    }
-    .logo img {
-        height: 70px !important;
-        margin: 0 auto;
+        height: auto;
+        flex-direction: column; 
+        padding: 20px 10px;
     }
     nav {
-        display: block !important;
-        width: 100% !important;
-        margin-bottom: 20px !important;
+        width: 100%;
+        margin-bottom: 20px;
     }
     .menu {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 10px !important;
-        padding: 0 !important;
+        gap: 10px;
+        flex-wrap: wrap; 
+        justify-content: center;
     }
     .menu li {
-            font-size: 0.7rem; 
-            letter-spacing: 1px;
-        }
-    .menu li a {
-        font-size: 11px !important;
+        font-size: 0.7rem; 
+        letter-spacing: 1px;
+    }
+    .logo {
+        margin-bottom: 15px;
+        justify-content: center;
+    }
+    .logo img {
+        height: 80px;
     }
     .iconos {
-        display: flex !important;
-        width: 100% !important;
-        justify-content: center !important;
-        gap: 30px !important;
-        border-top: 1px solid #f0f0f0;
-        padding-top: 15px !important;
+        width: 100%;
+        justify-content: center;
+        border-top: 1px solid #eee;
+        padding-top: 15px;
     }
     .cartDropdown, .userDrop {
         position: fixed;
