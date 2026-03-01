@@ -543,3 +543,58 @@ nav {
         height: 40px;
     }
 }
+
+/*---PAGINA DE PRODUCTO---*/
+.detalle-producto {
+    padding: 120px 20px 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contenedor-detalle {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.imagen-grande img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.info-detalle h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.precio-detalle {
+    font-size: 1.5rem;
+    color: #27ae60;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.descripcion {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.btnVolver {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* Responsividad para la página de detalle */
+@media (max-width: 768px) {
+    .contenedor-detalle {
+        flex-direction: column;
+        text-align: center;
+    }
+}

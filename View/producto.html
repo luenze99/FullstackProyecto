@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles.css">
+    <title>Vibe&Co | Producto</title>
+</head>
+<body>
+    <header class="navbar" id="nav-placeholder"></header>
+
+    <main class="detalle-producto">
+        <div class="contenedor-detalle">
+            <div class="imagen-grande">
+                <img id="imgDetalle" src="" alt="">
+            </div>
+            <div class="info-detalle">
+                <h1 id="nombreDetalle">Cargando...</h1>
+                <p class="precio-detalle" id="precioDetalle"></p>
+                <p class="descripcion">Calidad premium Vibe&Co. Algodón 100% orgánico y corte moderno.</p>
+                
+                <button id="btnAgregarDetalle" class="btnPagar">AGREGAR AL CARRITO</button>
+                <button onclick="history.back()" class="btnVolver">VOLVER ATRÁS</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="mainScript.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const nombre = params.get('nombre');
+            const precio = params.get('precio');
+            const imagen = params.get('imagen');
+
+            if (nombre) {
+                document.getElementById('nombreDetalle').innerText = nombre;
+                document.getElementById('precioDetalle').innerText = `$${precio}`;
+                document.getElementById('imgDetalle').src = imagen;
+
+                document.getElementById('btnAgregarDetalle').onclick = () => {
+                    agregarAlCarrito(nombre, parseFloat(precio), imagen);
+                };
+            }
+        });
+    </script>
+</body>
+</html>
