@@ -598,3 +598,258 @@ nav {
         text-align: center;
     }
 }
+
+/*---Seccion Mujeres---*/
+.women-hero {
+    position: relative;
+    width: 100%;
+    height: 85vh; 
+    overflow: hidden;
+}
+
+.marmol {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8); 
+}
+
+.women-hero .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.women-hero .hero-text h1 {
+    font-size: 5rem;
+    letter-spacing: 12px;
+    margin: 0;
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.4);
+}
+
+.categorias-women {
+    text-align: center;
+    padding: 60px 20px 20px;
+}
+
+.categorias-women h2 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.filtros button {
+    background: white;
+    border: 1px solid #000;
+    padding: 10px 25px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.filtros button:hover {
+    background: #000;
+    color: #fff;
+}
+
+.cartItem img {
+    width: 50px !important;
+    height: 50px !important;
+    transform: none !important; 
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.cartDropdown {
+    text-align: left; 
+}
+
+@media (max-width: 768px) {
+    .women-hero .hero-text h1 {
+        font-size: 2.5rem;
+        letter-spacing: 5px;
+    }
+    .women-hero {
+        height: 60vh;
+    }
+}
+
+/*---Seccion Hombres---*/
+.men-hero {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.MenWalking {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+
+.men-hero .hero-text {
+    position: absolute;
+    text-align: center;
+    color: white;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    top: 50%;
+}
+
+.men-hero .hero-text h1 {
+    font-size: 3.5rem;
+    letter-spacing: 8px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    margin: 0;
+}
+
+.categorias-men {
+    text-align: center;
+    padding: 50px 20px 20px;
+}
+
+.categorias-men h2 {
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.filtros button {
+    padding: 10px 25px;
+    border: 1px solid black;
+    background: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filtros button:hover {
+    background: black;
+    color: white;
+}
+
+.productos-men {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding: 40px 80px;
+}
+
+.cartItem img {
+    width: 50px !important;
+    height: 50px !important;
+    transform: none !important;
+    object-fit: cover;
+}
+
+/*---Seccion Niños---*/
+.kids-hero {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.hero-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-img {
+    width: 50%; 
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+    transition: 0.5s;
+}
+
+.hero-img:hover {
+    filter: brightness(0.9);
+}
+
+.kids-hero .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    width: 100%;
+    pointer-events: none; 
+}
+
+.kids-hero .hero-text h1 {
+    font-size: 4rem;
+    letter-spacing: 10px;
+    text-shadow: 0 5px 20px rgba(0,0,0,0.6);
+    margin: 0;
+}
+
+.categorias-kids {
+    text-align: center;
+    padding: 60px 20px 20px;
+}
+
+.categorias-kids h2 {
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.cartItem img {
+    width: 50px !important;
+    height: 50px !important;
+    transform: none !important;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+    }
+    .hero-img {
+        width: 100%;
+        height: 50%;
+    }
+    .kids-hero .hero-text h1 {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+}
