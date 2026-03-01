@@ -2,8 +2,8 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport"content="width=device-width, initial-scale=1.0">
-        <link rel="Stylesheet" href="Styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="Stylesheet" href="men_styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
         <title>Vibe&Co</title>
     </head>
@@ -44,14 +44,24 @@
             </div>
         </header> 
         <main>
-            <section class="hero">
-                <img src ="../Source/img/Sky_Sunset.jpg" class="Sol">
-
+            <section class ="men-hero">
+                <img src="../Source/img/MenWalking.jpg"  class ="MenWalking">
                 <div class="hero-text">
-                    <h1>Wear The Vibe</h1>
+                    <h1>SHOW ME WHO YOU ARE</h1>
                 </div>
             </section>
-            <section class="productos" id="productos-ancla">
+            <section class="categorias-men">
+                <h2>Colección Hombre</h2>
+
+                <div class="filtros">
+                    <button>Todo</button>
+                    <button>Playeras</button>
+                    <button>Sudaderas</button>
+                    <button>Pantalones</button>
+                    <button>Accesoríos</button>
+                </div>
+            </section>
+            <section class="productos-men">
                 <div class="producto">
                     <a href="producto.html?nombre=Playera%20Vibe%20Negra&precio=299&imagen=../Source/Ropa/Playera_negra_lisa.png"><img src="../Source/Ropa/Playera_negra_lisa.png" alt="Playera Negra"></a>
                     <h4>Playera Negra</h4>
@@ -79,7 +89,7 @@
                     <p>$299 MXN</p>
                     <button onclick="agregarCarrito('Playera Vibe Verde', 299, '../Source/Ropa/Playera_verde_lisa.png')">AGREGAR AL CARRITO</button>
                 </div>
-                
+
                 <div class="producto">
                     <a href="producto.html?nombre=Playera%20Vibe%20Roja&precio=299&imagen=../Source/Ropa/Playera_roja_lisa.png"><img src="../Source/Ropa/Playera_roja_lisa.png" alt="Playera Roja"></a>
                     <h4>Playera Roja</h4>
@@ -87,19 +97,6 @@
                     <button onclick="agregarCarrito('Playera Vibe Roja', 299, '../Source/Ropa/Playera_roja_lisa.png')">AGREGAR AL CARRITO</button>
                 </div>
             </section>
-
-            <section class="objetivos">
-                <h2>Nuestros Objetivos</h2>
-                <ul class="lista">
-                    <li>Crear prendas que reflejen quién eres, no solo cómo te ves.</li>
-                    <li>Convertir tu estilo en una forma de expresión auténtica.</li>
-                    <li>Diseñar ropa que conecte con tu vibra y tu personalidad.</li>
-                    <li>Romper lo común y vestir lo extraordinario.</li>
-                    <li>Hacer que cada outfit cuente una historia.</li>
-                    <li>Impulsar la identidad de cada persona a través de diseños con carácter y propósito.</li>
-                    <li>Crear piezas que inspiren confianza, actitud y autenticidad.</li>
-                    <li>Transformar la ropa en una extensión de tu esencia.</li>
-                </ul>
         </main>
         <footer class="Pie">
 
@@ -141,7 +138,7 @@
 
 
             <div class="piedepagina">
-                <img src="../Source/Logos/Logo_Vibe&Co.jpeg">
+                <img src="../public/Source/Logos/Logo_Vibe&Co.jpeg">
                 <p>© 2026 Vibe&Co. Todos los derechos reservados.</p>
             </div>
 
