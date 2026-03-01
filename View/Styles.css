@@ -13,7 +13,11 @@ body{
 }
 
 .logo img{
-    height: 80px;
+    height: 100px;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
 }
 
 .menu {
@@ -467,27 +471,35 @@ body{
     color: #555;
 }
 
-/*---RESPONSIVIDAD MOVILES---*/
 .userContainer.active .userDrop,
-.cartContainer.active .cartDropdown {
+.cartContainer.active .cartDropdown{
     display: block !important;
     opacity: 1;
     visibility: visible;
 }
 
-@media (max-width: 768px) {
+/*---RESPONSIVIDAD TELEFONOS---*/
+@media (max-width: 768px){
     .navbar {
-        padding: 10px 20px; 
+        padding: 10px 15px; 
+        flex-direction: column;
+        gap: 10px;
     }
-
     .menu {
-        display: none; 
+        gap: 10px;
+        justify-content: center;
+        width: 100%;
     }
-
+    .menu li {
+        font-size: 0.7rem; 
+        letter-spacing: 1px;
+    }
     .logo img{
         height: 50px;
     }
-
+    .iconos {
+        gap: 15px;
+    }
     .cartDropdown, .userDrop {
         position: fixed;
         top: 70px;
@@ -497,7 +509,6 @@ body{
         max-width: none;
         z-index: 1000;
     }
-
     .cartItem img {
         width: 40px;
         height: 40px;
