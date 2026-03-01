@@ -1,234 +1,297 @@
-body{
+body {
     background-color: #EDE8D0;
-    margin:0;
-    font-family: 'Poppins', 'sans-serif';
-}
-
-header{
-    display:flex;
-    justify-content: left;
-    align-items: center;
-    gap: 30px; 
-    padding: 15px 40px;
-    border-bottom: 1px solid #ddd;
-    position: relative;
-    color: #fff;
-}
-.navbar{
-  display: flex;
-  align-items: left;
-  padding: 20px 60px;
-  background: #1F2A44;
-  border-bottom: 1px solid #eee;
-}
-.menu{
-  display: flex;
-  list-style: none;
-  gap: 40px;
-  margin: 0;
-  padding: 0;
-  color: #fff;
-
-}
-.menu li{
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-  cursor: pointer;
-  transition: 0.3s;
-  color:#fff;
-}
-.menu li:hover {
-  color: #888;
-}
-.LoNuevo{
-    color:#fff;
-}
-.Hombres{
-    color:#fff;
-}
-.Mujeres{
-    color:#fff;
-}
-.NiñosyNiñas{
-    color:#fff;
-}
-.Ofertas{
-    color:#fff;
-}
-.iconos {
-    display: flex;
-    align-items: center;
-    gap: 25px; 
-}
-
-.iconos a {
-    display: flex;
-    align-items: center;
-}
-
-.iconos img {
-    width: 22px;  
-    height: 22px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    color:#fff;
-}
-.iconos img:hover {
-    transform: scale(1.15);
-    opacity: 0.7;
-}
-.Carrito{
-    position: absolute;
-    right: 55px;
-    width: 20px;
-    height: auto;
-}
-.Usuario{
-    position: absolute;
-    right: 20px;
-    width: 21px;
-    height:auto;
-    align-items: center;
-}
-.MeGusta{
-    position: absolute;
-    right: 90px;
-    width: 20px;
-    height:auto;
-    align-items: center;
-}
-header a{
+    margin: 0;
     font-family: 'Poppins', sans-serif;
-    font-size: 10px;
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
+    overflow-x: hidden;
 }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    background: #1F2A44;
+    height: 100px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
 .logo img {
-  height: 80px;
-}
-.Carrito{
-    width: 20px;
-    height: 20px;
-}
-.marmol{
-    width: 1525px;
-    height: 600px;
-    object-fit: cover; 
-}
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
-    color: white;
-}
-.hero-text h1 {
-    font-size: 4rem;
-    margin: 0;
-    margin: 0;
-    letter-spacing: 5px;
+    height: 80px;
+    width: auto;
+    object-fit: contain;
 }
 
-.categorias-women{
-    text-align: center;
-    padding: 50px 20px 20px;
-}
-.filtros{
-    margin-top: 20px;
+nav {
+    flex: 2;
+    display: flex;
+    justify-content: center;
 }
 
-.filtros button{
-    padding: 8px 20px;
-    margin: 5px;
-    border: 1px solid black;
-    background: white;
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li a {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.menu li a:hover {
+    color: #888;
+}
+
+.iconos {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+.iconNav, .iconos img {
+    width: 22px;
+    height: 22px;
+    filter: invert(1);
     cursor: pointer;
     transition: 0.3s;
 }
 
-.filtros button:hover{
+.iconNav:hover {
+    transform: scale(1.15);
+    opacity: 0.7;
+}
+
+.userContainer, .cartContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#cartCount {
+    background: #ff3f6c;
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    right: -10px;
+}
+
+.userDrop, .cartDropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    color: black;
+}
+
+.userContainer:hover .userDrop,
+.cartContainer:hover .cartDropdown {
+    display: block;
+}
+
+.women-hero {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.MenWalking, .marmol {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.hero-text {
+    position: absolute;
+    text-align: center;
+    color: white;
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    letter-spacing: 8px;
+    margin: 0;
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+}
+
+.categorias-women {
+    text-align: center;
+    padding: 60px 20px 20px;
+}
+
+.categorias-women h2 {
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.filtros {
+    margin-top: 25px;
+}
+
+.filtros button {
+    padding: 10px 25px;
+    margin: 5px;
+    border: 1px solid black;
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filtros button:hover {
     background: black;
     color: white;
 }
 
-.productos{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+.productos-men, .productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
-    padding: 60px;
+    padding: 40px 80px;
+}
+
+.producto {
+    text-align: center;
 }
 
 .producto img {
     width: 100%;
-    transition: 0.3s;
+    border-radius: 4px;
+    transition: 0.4s;
 }
-.producto:hover img{
-    transform: scale(1.05);
+
+.producto:hover img {
+    transform: translateY(-10px);
 }
-.producto button{
-    margin-top: 10px;
-    padding: 8px 20px;
+
+.producto h4 {
+    margin: 15px 0 5px;
+    font-size: 1.1rem;
+}
+
+.producto p {
+    font-weight: 600;
+    color: #333;
+}
+
+.producto button {
+    margin-top: 15px;
+    padding: 12px 20px;
     background: black;
     color: white;
     border: none;
+    width: 100%;
     cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    transition: 0.3s;
 }
 
-.Pie{
-  background: #1F2A44;
-  padding: 60px 80px 30px;
-  border-top: 1px solid #eee;
-  font-family: 'Poppins', sans-serif;
+.producto button:hover {
+    background: #333;
 }
+
+.Pie {
+    background: #1F2A44;
+    padding: 60px 80px 30px;
+    color: white;
+    margin-top: 50px;
+}
+
 .info {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 60px;
-  margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
 }
 
-/* Columnas */
 .columnas h3 {
-  font-size: 15px;
-  margin-bottom: 15px;
-  font-weight: 600;
-  color: #fff;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #fff;
 }
 
 .columnas a {
-  display: block;
-  text-decoration: none;
-  color: #fff;
-  font-size: 13px;
-  margin-bottom: 8px;
+    display: block;
+    text-decoration: none;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    transition: 0.3s;
 }
 
 .columnas a:hover {
-  text-decoration: underline;
+    color: white;
+    text-decoration: underline;
 }
 
-/* Texto */
-.columnas p {
-  font-size: 13px;
-  margin-bottom: 12px;
-}
-
-
-/* Parte inferior */
 .piedepagina {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  border-top: 1px solid #1F2A44;
-  padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 30px;
 }
 
 .piedepagina img {
-  height: 35px;
+    height: 40px;
+    filter: brightness(0) invert(1);
 }
 
 .piedepagina p {
-  font-size: 12px;
-  color: #fff;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        flex-direction: column;
+        padding: 20px;
+    }
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin: 20px 0;
+    }
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    .productos {
+        padding: 20px;
+    }
 }
