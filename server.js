@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'View')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/Source', express.static(path.join(__dirname, 'Source')));
-app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use('/View', express.static(path.join(__dirname, 'View')));
 
 //Pagina que se muestra al entrar a la raiz del servidor (Login) -------------------------------->
 app.get('/', (req, res) => {
