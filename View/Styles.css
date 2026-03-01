@@ -3,17 +3,33 @@ body{
     font-family: 'Poppins', 'sans-serif';
 }
 
-.navbar{ /*Unificacion de header y .navbar*/
+.navbar {
     display: flex;
-    justify-content: space-between; /*AGREGADO: Separa el logo del menú y los iconos*/
+    justify-content: space-between; 
     align-items: center;
-    padding: 10px 60px; /*MODIFICADO*/
+    padding: 0 40px;
     background: white;
     border-bottom: 1px solid #eee;
+    height: 100px;
+    position: relative;
 }
 
-.logo img{
-    height: 100px;
+nav {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    flex: 1; 
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 150px; 
+    width: auto;
+    object-fit: contain;
 }
 
 .logo img:hover {
@@ -23,7 +39,7 @@ body{
 .menu {
     display: flex;
     list-style: none;
-    gap: 40px;
+    gap: 25px; 
     margin: 0;
     padding: 0;
 }
@@ -45,10 +61,12 @@ body{
     font-size: 10px;
 }
 
-.iconos{
+.iconos {
+    flex: 1; 
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    gap: 20px; /*MODIFICADO: de 25 a 20*/
+    gap: 20px;
 }
 
 /*Clase para todos los iconos de la nav*/
@@ -481,24 +499,35 @@ body{
 /*---RESPONSIVIDAD TELEFONOS---*/
 @media (max-width: 768px){
     .navbar {
-        padding: 10px 15px; 
-        flex-direction: column;
-        gap: 10px;
+        height: auto;
+        flex-direction: column; 
+        padding: 20px 10px;
+    }
+    nav {
+        width: 100%;
+        margin-bottom: 20px;
     }
     .menu {
         gap: 10px;
+        flex-wrap: wrap; 
         justify-content: center;
-        width: 100%;
     }
     .menu li {
         font-size: 0.7rem; 
         letter-spacing: 1px;
     }
-    .logo img{
-        height: 50px;
+    .logo {
+        margin-bottom: 15px;
+        justify-content: center;
+    }
+    .logo img {
+        height: 80px;
     }
     .iconos {
-        gap: 15px;
+        width: 100%;
+        justify-content: center;
+        border-top: 1px solid #eee;
+        padding-top: 15px;
     }
     .cartDropdown, .userDrop {
         position: fixed;
