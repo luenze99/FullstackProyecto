@@ -2,24 +2,32 @@ body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background-color: #ffffff;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between; 
     align-items: center;
-    padding: 10px 40px;
+    padding: 0 40px;
     background: white;
     border-bottom: 1px solid #eee;
-    height: 90px;
-    position: sticky; 
+    height: 100px;
+    position: sticky;
     top: 0;
     z-index: 1000;
 }
 
+.logo {
+    flex: 1; 
+    display: flex;
+    align-items: center;
+}
+
 .logo img {
-    height: 70px;
+    height: 120px;
+    width: auto;
+    object-fit: contain;
     transition: transform 0.3s;
 }
 
@@ -27,10 +35,16 @@ body {
     transform: scale(1.05);
 }
 
+nav {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
 .menu {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 25px;
     margin: 0;
     padding: 0;
 }
@@ -40,7 +54,8 @@ body {
     color: black;
     font-size: 0.85rem;
     font-weight: 600;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     transition: 0.3s;
 }
 
@@ -49,7 +64,9 @@ body {
 }
 
 .iconos {
+    flex: 1;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
     gap: 20px;
 }
@@ -58,7 +75,7 @@ body {
     width: 22px;
     height: 22px;
     cursor: pointer;
-    transition: transform 0.3s, opacity 0.3s;
+    transition: all 0.3s;
 }
 
 .iconNav:hover {
@@ -68,23 +85,44 @@ body {
 
 .userContainer, .cartContainer {
     position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.userDrop, .cartDropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border: 1px solid #eee;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    z-index: 1100;
+}
+
+.userContainer:hover .userDrop,
+.cartContainer:hover .cartDropdown {
+    display: block;
 }
 
 #cartCount {
-    background: black;
+    background: #ff3f6c;
     color: white;
     font-size: 10px;
+    font-weight: bold;
     padding: 2px 6px;
     border-radius: 50%;
     position: absolute;
-    top: -5px;
+    top: -8px;
     right: -10px;
 }
 
 .men-hero {
     position: relative;
     width: 100%;
-    height: 70vh; 
+    height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -94,8 +132,8 @@ body {
 .MenWalking {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    filter: brightness(0.8); 
+    object-fit: cover;
+    filter: brightness(0.8);
 }
 
 .hero-text {
@@ -119,10 +157,6 @@ body {
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
-}
-
-.filtros {
-    margin-top: 20px;
 }
 
 .filtros button {
@@ -185,13 +219,11 @@ body {
     font-size: 0.8rem;
     letter-spacing: 1px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 .producto button:hover {
     background: #333;
 }
-
 
 .Pie {
     background: #f9f9f9;
@@ -245,7 +277,6 @@ body {
     color: #888;
 }
 
-
 @media (max-width: 768px) {
     .navbar {
         height: auto;
@@ -253,23 +284,15 @@ body {
         padding: 20px;
         gap: 15px;
     }
-
     .menu {
         gap: 15px;
         flex-wrap: wrap;
         justify-content: center;
     }
-
     .hero-text h1 {
         font-size: 2rem;
     }
-
     .productos-men {
         padding: 20px;
-    }
-
-    .info {
-        grid-template-columns: 1fr;
-        text-align: center;
     }
 }
