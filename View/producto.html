@@ -1,58 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Styles.css">
-    <title>Vibe&Co | Producto</title>
-</head>
-<body>
-    <header class="navbar" id="nav-placeholder"></header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Styles.css">
+        <title>Vibe&Co | Producto</title>
+    </head>
+    <body>
+        <header class="navbar" id="nav-placeholder"></header>
 
-    <main class="detalle-producto">
-        <div class="contenedor-detalle">
-            <div class="imagen-grande">
-                <img id="imgDetalle" src="" alt="">
+        <main class="detalle-producto">
+            <div class="contenedor-detalle">
+                <div class="imagen-grande">
+                    <img id="imgDetalle" src="" alt="">
+                </div>
+                <div class="info-detalle">
+                    <h1 id="nombreDetalle">Cargando...</h1>
+                    <p class="precio-detalle" id="precioDetalle"></p>
+                    <p class="descripcion">Calidad premium Vibe&Co. Algodón 100% orgánico y corte moderno.</p>
+                    
+                    <button id="btnAgregarDetalle" class="btnPagar">AGREGAR AL CARRITO</button>
+                    <button onclick="history.back()" class="btnVolver">VOLVER ATRÁS</button>
+                </div>
             </div>
-            <div class="info-detalle">
-                <h1 id="nombreDetalle">Cargando...</h1>
-                <p class="precio-detalle" id="precioDetalle"></p>
-                <p class="descripcion">Calidad premium Vibe&Co. Algodón 100% orgánico y corte moderno.</p>
-                
-                <button id="btnAgregarDetalle" class="btnPagar">AGREGAR AL CARRITO</button>
-                <button onclick="history.back()" class="btnVolver">VOLVER ATRÁS</button>
-            </div>
-        </div>
-    </main>
+        </main>
 
-    <script src="mainScript.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const params = new URLSearchParams(window.location.search);
-        const nombre = params.get('nombre');
-        const precio = params.get('precio');
-        const imagen = params.get('imagen');
+        <script src="mainScript.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const nombre = params.get('nombre');
+            const precio = params.get('precio');
+            const imagen = params.get('imagen');
 
-        if (nombre) {
-            document.getElementById('nombreDetalle').innerText = nombre;
-            document.getElementById('precioDetalle').innerText = `$${precio} MXN`;
-            document.getElementById('imgDetalle').src = imagen;
+            if (nombre && precio && imagen) {
+                document.getElementById('nombreDetalle').innerText = nombre;
+                document.getElementById('precioDetalle').innerText = `$${precio} MXN`;
+                document.getElementById('imgDetalle').src = imagen;
 
-            const btn = document.getElementById('btnAgregarDetalle');
-            btn.onclick = function() {
-                const precioNum = parseFloat(precio);
+                const btn = document.getElementById('btnAgregarDetalle');
                 
-                agregarCarrito(nombre, precioNum, imagen);
-                
-                btn.innerText = "¡AGREGADO!";
-                btn.style.backgroundColor = "#27ae60";
-                setTimeout(() => {
-                    btn.innerText = "AGREGAR AL CARRITO";
-                    btn.style.backgroundColor = "black";
-                }, 2000);
-            };
-        }
-    });
-</script>
-</body>
+                if (btn) {
+                    btn.onclick = () => {
+                        console.log("Intentando agregar:", nombre, precio); 
+                        agregarCarrito(nombre, Number(precio), imagen);
+                        
+                        btn.innerText = "AÑADIDO AL CARRITO";
+                        btn.style.background = "#28a745";
+                        setTimeout(() => {
+                            btn.innerText = "AGREGAR AL CARRITO";
+                            btn.style.background = "black";
+                        }, 1500);
+                    };
+                }
+            } else {
+                console.error("No se recibieron datos del producto en la URL");
+            }
+        });
+    </script>
+    </body>
 </html>
