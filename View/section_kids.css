@@ -1,240 +1,270 @@
-body{
-    margin:0;
-    font-family: 'Bebas Neue', 'sans-serif';
+body {
+    background-color: #f8f5e6;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    color: #333;
 }
 
-header{
-    display:flex;
-    justify-content: left;
+/* NAVBAR (Estilo solicitado: Blanco con hover escala) */
+.navbar {
+    display: flex;
+    justify-content: space-between; 
     align-items: center;
-    gap: 30px; 
-    padding: 15px 40px;
-    border-bottom: 1px solid #ddd;
-    position: relative;
-    color: #fff;
+    padding: 0 40px;
+    background: white;
+    border-bottom: 1px solid #eee;
+    height: 100px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
-.navbar{
-  display: flex;
-  align-items: left;
-  padding: 20px 60px;
-  background: #fff;
-  border-bottom: 1px solid #eee;
-}
-.menu{
-  display: flex;
-  list-style: none;
-  gap: 40px;
-  margin: 0;
-  padding: 0;
-  color: #fff;
 
+.logo img {
+    height: 90px;
+    transition: transform 0.3s;
 }
-.menu li{
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-  cursor: pointer;
-  transition: 0.3s;
-  color:#fff;
+
+.logo img:hover {
+    transform: scale(1.05);
 }
-.menu li:hover {
-  color: #888;
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
 }
-.LoNuevo{
-    color:black;
-    font-family: 'Poppins', 'sans-serif';
+
+.menu li a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
 }
-.Hombres{
-    font-family: 'Poppins', 'sans-serif';
-    color:black;
-}
-.Mujeres{
-    font-family: 'Poppins', 'sans-serif';
-    color:black;
-}
-.NiñosyNiñas{
-    font-family: 'Poppins', 'sans-serif';
-    color:black;
+
+.menu li a:hover {
+    color: #888;
 }
 
 .iconos {
     display: flex;
     align-items: center;
-    gap: 25px; 
+    gap: 20px;
 }
 
-.iconos a {
-    display: flex;
-    align-items: center;
-}
-
-.iconos img {
-    width: 22px;  
-    height: 22px;
+.iconNav {
+    width: 22px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    color:#fff;
+    transition: all 0.3s;
 }
-.iconos img:hover {
+
+.iconNav:hover {
     transform: scale(1.15);
     opacity: 0.7;
 }
-.Carrito{
+
+/* DROPDOWNS */
+.userContainer, .cartContainer { position: relative; }
+
+.userDrop, .cartDropdown {
+    display: none;
     position: absolute;
-    right: 55px;
-    width: 20px;
-    height: auto;
-}
-.Usuario{
-    position: absolute;
-    right: 20px;
-    width: 21px;
-    height:auto;
-    align-items: center;
-}
-.MeGusta{
-    position: absolute;
-    right: 90px;
-    width: 20px;
-    height:auto;
-    align-items: center;
-}
-header a{
-    font-family: 'Poppins', sans-serif;
-    font-size: 10px;
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
-}
-.logo img {
-  height: 80px;
-}
-.Carrito{
-    width: 20px;
-    height: 20px;
-}
-.hero-container {
-  display: flex;
-  height: 600px;
+    top: 100%;
+    right: 0;
+    background: white;
+    border: 1px solid #eee;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    z-index: 1100;
 }
 
-.hero-container img {
-  width: 50%;
-  object-fit: cover;
+.userContainer:hover .userDrop, 
+.cartContainer:hover .cartDropdown { 
+    display: block; 
+}
+
+#cartCount {
+    background: #ff3f6c;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    right: -10px;
+}
+
+/* HERO NIÑOS (Doble imagen lado a lado) */
+.kids-hero {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    background-color: #000;
+}
+
+.hero-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+    transition: 0.5s;
+}
+
+.hero-img:hover {
+    filter: brightness(0.9);
 }
 
 .hero-text {
     position: absolute;
     top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
-    color: white;
-}
-.hero-text h1 {
-    font-size: 9rem;
-    font-family: 'Bebas Neue', sans-serif  ;
-    margin: 0;
-    margin: 0;
-    letter-spacing: 5px;
-}
-
-.categorias-kids{
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    padding: 50px 20px 20px;
-}
-.filtros{
-    margin-top: 20px;
+    width: 100%;
+    pointer-events: none;
 }
 
-.filtros button{
-    padding: 8px 20px;
-    margin: 5px;
-    border: 1px solid black;
+.hero-text h1 {
+    color: white;
+    font-size: 4.5rem;
+    letter-spacing: 12px;
+    text-shadow: 0 5px 25px rgba(0,0,0,0.7);
+    margin: 0;
+}
+
+/* SECCIÓN PRODUCTOS */
+.categorias-kids {
+    text-align: center;
+    padding: 80px 20px 20px;
+}
+
+.categorias-kids h2 {
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.filtros button {
+    padding: 12px 30px;
+    margin: 8px;
+    border: 1px solid #333;
     background: white;
+    font-weight: 600;
     cursor: pointer;
+    border-radius: 50px;
     transition: 0.3s;
 }
 
-.filtros button:hover{
+.filtros button:hover {
     background: black;
     color: white;
 }
 
-.productos-kids{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 40px;
-    padding: 60px;
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px;
+    padding: 40px 10%;
+}
+
+.producto {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.4s;
+}
+
+.producto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
 }
 
 .producto img {
     width: 100%;
-    transition: 0.3s;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 10px;
 }
-.producto:hover img{
-    transform: scale(1.05);
+
+.producto h4 {
+    margin: 20px 0 5px;
+    font-size: 1.2rem;
 }
-.producto button{
-    margin-top: 10px;
-    padding: 8px 20px;
+
+.producto p {
+    color: #555;
+    font-weight: 600;
+}
+
+.producto button {
+    margin-top: 15px;
+    padding: 15px;
     background: black;
     color: white;
     border: none;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
     cursor: pointer;
+    border-radius: 8px;
+    letter-spacing: 1px;
 }
 
-.Pie{
-  background: #fff;
-  padding: 60px 80px 30px;
-  border-top: 1px solid #eee;
-  font-family: 'Poppins', sans-serif;
+/* FOOTER PREMIUM OSCURO */
+.Pie {
+    background: #1F2A44;
+    padding: 80px 10% 40px;
+    color: white;
+    margin-top: 80px;
 }
+
 .info {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 60px;
-  margin-bottom: 40px;
-}
-
-/* Columnas */
-.columnas h3 {
-  font-size: 15px;
-  margin-bottom: 15px;
-  font-weight: 600;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
 }
 
 .columnas a {
-  display: block;
-  text-decoration: none;
-  color: #000;
-  font-size: 13px;
-  margin-bottom: 8px;
+    color: #bbb;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 12px;
+    transition: 0.3s;
 }
 
 .columnas a:hover {
-  text-decoration: underline;
+    color: white;
+    padding-left: 5px;
 }
 
-/* Texto */
-.columnas p {
-  font-size: 13px;
-  margin-bottom: 12px;
-}
-
-
-/* Parte inferior */
 .piedepagina {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  border-top: 1px solid #eee;
-  padding-top: 20px;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
 }
 
 .piedepagina img {
-  height: 35px;
+    height: 50px;
+    filter: brightness(0) invert(1);
+    margin-bottom: 10px;
 }
 
-.piedepagina p {
-  font-size: 12px;
-  color: #555;
+@media (max-width: 768px) {
+    .hero-text h1 { font-size: 2.2rem; }
+    .hero-container { flex-direction: column; }
+    .hero-img { width: 100%; height: 50%; }
 }

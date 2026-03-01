@@ -6,7 +6,6 @@ body {
     color: #333;
 }
 
-/* NAVBAR RESTAURADA (Como el código de referencia) */
 .navbar {
     display: flex;
     justify-content: space-between; 
@@ -91,7 +90,6 @@ nav {
     align-items: center;
 }
 
-/* DROPDOWNS RESTAURADOS */
 .userDrop, .cartDropdown {
     display: none;
     position: absolute;
@@ -122,7 +120,6 @@ nav {
     right: -10px;
 }
 
-/* SECCIÓN HERO (MEJORADA) */
 .women-hero {
     position: relative;
     width: 100%;
@@ -245,7 +242,6 @@ nav {
     background: #333;
 }
 
-/* FOOTER (OSCURO PREMIUM) */
 .Pie {
     background: #1F2A44;
     padding: 80px 10% 40px;
