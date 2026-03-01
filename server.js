@@ -6,19 +6,12 @@ const path = require('path');
 
 const app = express();
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'View')));
-app.use(express.static(path.join(__dirname, 'public')));
 app.use('/Source', express.static(path.join(__dirname, 'Source')));
-app.use('/public', express.static(path.join(__dirname, 'public')));
 
 //Pagina que se muestra al entrar a la raiz del servidor (Login) -------------------------------->
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'View', 'Main.html')); //Modificar despues a Main.html o lo que sea la pagina principal
-});
-
-app.get('/health', (req, res) => {
-    res.json({ ok: true, service: 'vibe-co-proyecto' });
 });
 
 //CONFIGURACIÓN PARA RENDER
