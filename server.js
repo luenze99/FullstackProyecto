@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 3000;
 const SECRET_KEY = process.env.SECRET_KEY || "Vibe&CoSecretKey123";
 
 //CONEXIÓN URL de MongoDB Atlas (Modificar Despues) -------------------------------->
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/vibeCoDB';
+const MONGO_URI = process.env.MONGO_URI;
 mongoose.connect(MONGO_URI)
     .then(() => console.log("Base de datos conectada"))
     .catch(err => console.error("Error de conexión a la base de datos:", err));
