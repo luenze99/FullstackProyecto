@@ -3,131 +3,125 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="../public/Source/Logos/Logo_icon_Vibe_Co.png" type="image/png">
-        <link rel="stylesheet" href="../public/section_women.css">
+        <link rel="icon" href="../Source/Logos/Logo_icon_Vibe_Co.png" type="image/png">
+        <link rel="stylesheet" href="men_styles.css"> 
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
         <title>Vibe&Co - Mujeres</title>
     </head>
     <body>
         <header class="navbar">
-            <div class="logo"> <img src="../public/Source/Logos/Logo_icon_Vibe_Co.png" alt="Logo"></div>
+            <div class="logo"> 
+                <a href="Main.html"><img src="../Source/Logos/Logo_Vibe&Co.jpeg" alt="Logo"></a>
+            </div>
             <nav>
-                <ul class ="menu">
-                    <li><a href="../public/the_newest.html" class="LoNuevo">LO NUEVO</a></li>
-                    <li><a href="../public/section_men.html" class="Hombres">HOMBRES</a></li>
-                    <li><a href="#"class="Mujeres">MUJERES</a></li>
-                    <li><a href="../public/section_kids.html" class="NiñosyNiñas">NIÑOS Y NIÑAS</a></li>
+                <ul class="menu">
+                    <li><a href="the_newest.html">LO NUEVO</a></li>
+                    <li><a href="section_men.html">HOMBRES</a></li>
+                    <li><a href="section_women.html" style="color: #888;">MUJERES</a></li>
+                    <li><a href="section_kids.html">NIÑOS Y NIÑAS</a></li>
                 </ul>
             </nav>
             <div class="iconos">
-                <a href="../views/shopping_cart_view.html"><img src="../public/Source/icons/Carrito de compras.png" class="Carrito" alt="Carrito de compras"></a>
-                <a href=""><img src="../public/Source/icons/Icono Usuario.png" class="Usuario" alt="Usuario"></a>
-                <a href=""><img src="../public/Source/icons/Favoritos.png" class="MeGusta" alt="MeGusta"></a>
+                <div class="userContainer" id="UserIconContainer">
+                    <img src="../Source/icons/Icono_Usuario.png" class="iconNav" alt="Usuario">
+                    <div class="userDrop">
+                        <div id="userContent">
+                            <button onclick="window.location.href='login.html'" class="btnDropdown">Iniciar Sesión</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cartContainer" id="cartIconContainer">
+                    <img src="../Source/icons/Carrito_de_compras.png" class="iconNav" alt="Carrito"><span id="cartCount">0</span>
+                    <div class="cartDropdown">
+                        <div id="cartItemsContainer">
+                            <p class="emptyMsg">Carrito vacío</p>
+                        </div>
+                        <div class="cartFooter">
+                            <div class="cartTotal">Total: <span id="cartTotalAmount">$0.00</span></div>
+                            <button onclick="Pagar()" class="btnPagar">FINALIZAR COMPRA</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
+
         <main>
-            <section class ="women-hero">
-                <img src="../public/Source/img/marmol.jpg" class="marmol">
+            <section class="women-hero">
+                <img src="../Source/img/marmol.jpg" class="MenWalking"> 
                 <div class="hero-text">
                     <h1>PURE PRESENCE</h1>
                 </div>
             </section>
-            <section class="categorias-women">
-                <h2>Colección Mujeres</h2>
 
+            <section class="categorias-men">
+                <h2>Colección Mujeres</h2>
                 <div class="filtros">
                     <button>Todo</button>
                     <button>Playeras</button>
                     <button>Sudaderas</button>
                     <button>Pantalones</button>
-                    <button>Accesoríos</button>
+                    <button>Accesorios</button>
                 </div>
             </section>
-            <section class="productos">
+
+            <section class="productos-men">
                 <div class="producto">
-                    <a href=""><img src="../public/Source/Ropa/Polo Verde Mujer Beige.png"></a>
+                    <a href="producto.html?nombre=Polo%20Verde&precio=299&imagen=../Source/Ropa/Polo_Verde_Mujer_Beige.png"><img src="../Source/Ropa/Polo_Verde_Mujer_Beige.png" alt="Polo Verde"></a>
                     <h4>Polo Verde</h4>
                     <p>$299 MXN</p>
-                    <button>Agregar al carrito</button>
+                    <button onclick="agregarCarrito('Polo Verde Mujer', 299, '../Source/Ropa/Polo_Verde_Mujer_Beige.png')">AGREGAR AL CARRITO</button>
                 </div>
 
                 <div class="producto">
-                    <a href=""><img src="../public/Source/Ropa/Playera Azul Mujer.png"></a>
+                    <a href="producto.html?nombre=Playera%20Azul&precio=299&imagen=../Source/Ropa/Playera_Azul_Mujer.png"><img src="../Source/Ropa/Playera_Azul_Mujer.png" alt="Playera Azul"></a>
                     <h4>Playera Azul</h4>
                     <p>$299 MXN</p>
-                    <button>Agregar al carrito</button>
+                    <button onclick="agregarCarrito('Playera Azul Mujer', 299, '../Source/Ropa/Playera_Azul_Mujer.png')">AGREGAR AL CARRITO</button>
                 </div>
 
                 <div class="producto">
-                    <a href=""><img src="../public/Source/Ropa/Playera Naranja Mujer.png"></a>
+                    <a href="producto.html?nombre=Playera%20Naranja&precio=299&imagen=../Source/Ropa/Playera_Naranja_Mujer.png"><img src="../Source/Ropa/Playera_Naranja_Mujer.png" alt="Playera Naranja"></a>
                     <h4>Playera Naranja</h4>
                     <p>$299 MXN</p>
-                    <button>Agregar al carrito</button>
+                    <button onclick="agregarCarrito('Playera Naranja Mujer', 299, '../Source/Ropa/Playera_Naranja_Mujer.png')">AGREGAR AL CARRITO</button>
                 </div>
 
                 <div class="producto">
-                    <a href=""><img src="../public/Source/Ropa/Playera Beige Mujer.png"></a>
+                    <a href="producto.html?nombre=Playera%20Beige&precio=299&imagen=../Source/Ropa/Playera_Beige_Mujer.png"><img src="../Source/Ropa/Playera_Beige_Mujer.png" alt="Playera Beige"></a>
                     <h4>Playera Beige</h4>
                     <p>$299 MXN</p>
-                    <button>Agregar al carrito</button>
+                    <button onclick="agregarCarrito('Playera Beige Mujer', 299, '../Source/Ropa/Playera_Beige_Mujer.png')">AGREGAR AL CARRITO</button>
                 </div>
-                
-                <div class="producto">
-                    <a href=""><img src="../public/Source/Ropa/Polo Rosa Mujer.png"></a>
-                    <h4>Polo Rosa</h4>
-                    <p>$299 MXN</p>
-                    <button>Agregar al carrito</button>
-                </div>
-
             </section>
-
         </main>
+
         <footer class="Pie">
-
             <div class="info">
-
-
                 <div class="columnas">
                     <h3>Colecciones</h3>
-                    <a href="">Mujer</a>
-                    <a href="">Hombre</a>
-                    <a href="">Niños</a>
-                    <a href="">Home</a>
-                    <a href="">Beauty</a>
-                    <a href="">Tarjetas de regalo</a>
+                    <a href="section_women.html">Mujer</a>
+                    <a href="section_men.html">Hombre</a>
+                    <a href="section_kids.html">Niños</a>
                 </div>
-
-
                 <div class="columnas">
-                    <h3>Información Corporativa</h3>
-                    <a href="">Trabajar en Vibe&Co</a>
+                    <h3>Información</h3>
                     <a href="">Acerca del grupo</a>
                     <a href="">Sostenibilidad</a>
                     <a href="">Prensa</a>
-                    <a href="">Relación con inversionistas</a>
-                    <a href="">Política empresarial</a>
                 </div>
-
-
                 <div class="columnas">
                     <h3>Ayuda</h3>
                     <a href="">Atención al cliente</a>
-                    <a href="">Mi cuenta</a>
-                    <a href="">Nuestras tiendas</a>
-                    <a href="">Términos y condiciones</a>
                     <a href="">Contacto</a>
                     <a href="">Compras seguras</a>
                 </div>
             </div>
-
-
             <div class="piedepagina">
-                <img src="../public/Source/Logos/Logo_Vibe&Co.jpeg">
+                <img src="../Source/Logos/Logo_Vibe&Co.jpeg">
                 <p>© 2026 Vibe&Co. Todos los derechos reservados.</p>
             </div>
-
         </footer>
-        
-    </body>
 
+        <script src="mainScript.js"></script>
+    </body>
 </html>
