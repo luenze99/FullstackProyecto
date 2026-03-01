@@ -27,22 +27,32 @@
 
     <script src="mainScript.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const params = new URLSearchParams(window.location.search);
-            const nombre = params.get('nombre');
-            const precio = params.get('precio');
-            const imagen = params.get('imagen');
+    document.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(window.location.search);
+        const nombre = params.get('nombre');
+        const precio = params.get('precio');
+        const imagen = params.get('imagen');
 
-            if (nombre) {
-                document.getElementById('nombreDetalle').innerText = nombre;
-                document.getElementById('precioDetalle').innerText = `$${precio}`;
-                document.getElementById('imgDetalle').src = imagen;
+        if (nombre) {
+            document.getElementById('nombreDetalle').innerText = nombre;
+            document.getElementById('precioDetalle').innerText = `$${precio} MXN`;
+            document.getElementById('imgDetalle').src = imagen;
 
-                document.getElementById('btnAgregarDetalle').onclick = () => {
-                    agregarCarrito(nombre, parseFloat(precio), imagen);
-                };
-            }
-        });
-    </script>
+            const btn = document.getElementById('btnAgregarDetalle');
+            btn.onclick = function() {
+                const precioNum = parseFloat(precio);
+                
+                agregarCarrito(nombre, precioNum, imagen);
+                
+                btn.innerText = "¡AGREGADO!";
+                btn.style.backgroundColor = "#27ae60";
+                setTimeout(() => {
+                    btn.innerText = "AGREGAR AL CARRITO";
+                    btn.style.backgroundColor = "black";
+                }, 2000);
+            };
+        }
+    });
+</script>
 </body>
 </html>
